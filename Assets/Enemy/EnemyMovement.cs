@@ -11,7 +11,17 @@ namespace Enemy {
         // Start is called before the first frame update
         void Start()
         {
+            FindPath();
             StartCoroutine(TravelPathPoints());
+        }
+
+        void FindPath() {
+            path.Clear();
+            GameObject[] pathPoints = GameObject.FindGameObjectsWithTag("Path");
+            foreach (GameObject pathPoint in pathPoints) {
+                path.Add(pathPoint.GetComponent<PathPoint>());
+            }
+            transform.position = path[0].transform.position;
         }
 
         IEnumerator TravelPathPoints() {
@@ -27,6 +37,7 @@ namespace Enemy {
                     yield return new WaitForEndOfFrame();
                 }
             }
+            Destroy(gameObject);
         }
     }
 
