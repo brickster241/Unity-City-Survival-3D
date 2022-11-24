@@ -7,6 +7,8 @@ namespace Tile {
     {
         [SerializeField] GameObject TowerPrefab;
         [SerializeField] bool canPlaceTower = true;
+
+        public bool CanPlaceTower { get { return canPlaceTower; } }
         void OnMouseDown() {
             Debug.Log("You clicked at : " + transform.name + "...");
             if (canPlaceTower) {

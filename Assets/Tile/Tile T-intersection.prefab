@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 3656893331257685237}
   - component: {fileID: 5078794848283604293}
   - component: {fileID: 446797652778771668}
-  - component: {fileID: 5106083563549689811}
   m_Layer: 0
   m_Name: Layout
   m_TagString: Untagged
@@ -117,19 +116,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5106083563549689811
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344197969980075830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8274976898094265421
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +127,6 @@ GameObject:
   - component: {fileID: 752302996110122038}
   - component: {fileID: 4618572063165047970}
   - component: {fileID: 9030780863698424523}
-  - component: {fileID: 8818175609141862214}
   m_Layer: 0
   m_Name: Marking
   m_TagString: Untagged
@@ -214,19 +199,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8818175609141862214
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8274976898094265421}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1032548203893530333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921139955994967164, guid: 6633c6506a6c42c4886845a366eb718a, type: 3}
       propertyPath: m_Center.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8577424303828627662, guid: 6633c6506a6c42c4886845a366eb718a, type: 3}
       propertyPath: m_LocalScale.z
@@ -310,7 +282,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1367216449806358660, guid: 6633c6506a6c42c4886845a366eb718a, type: 3}
+    - {fileID: 7056365512454145003, guid: 6633c6506a6c42c4886845a366eb718a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6633c6506a6c42c4886845a366eb718a, type: 3}
 --- !u!4 &1522046952336548427 stripped
 Transform:
