@@ -8,7 +8,7 @@ namespace Enemy {
         [SerializeField] int maxHitPoints = 5;
         int hitsRemaining;
         // Start is called before the first frame update
-        void Start()
+        void OnEnable()
         {
             hitsRemaining = maxHitPoints;
         }
@@ -18,7 +18,7 @@ namespace Enemy {
             if (other.transform.name == "Particle System" && hitsRemaining > 0) {
                 hitsRemaining -= 1;
                 if (hitsRemaining == 0) {
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
         }

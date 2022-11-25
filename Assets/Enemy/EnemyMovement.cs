@@ -9,7 +9,7 @@ namespace Enemy {
         [SerializeField] List<PathPoint> path = new List<PathPoint>();
         [SerializeField] float speed = 1f;
         // Start is called before the first frame update
-        void Start()
+        void OnEnable()
         {
             FindPath();
             StartCoroutine(TravelPathPoints());
@@ -37,7 +37,7 @@ namespace Enemy {
                     yield return new WaitForEndOfFrame();
                 }
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
