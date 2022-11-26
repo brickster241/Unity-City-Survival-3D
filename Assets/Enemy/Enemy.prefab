@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1d5a4bdc9fea45a8288f85a1e985e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balanceReward: 25
+  balancePenalty: 25
 --- !u!1001 &7347729619721795708
 PrefabInstance:
   m_ObjectHideFlags: 0

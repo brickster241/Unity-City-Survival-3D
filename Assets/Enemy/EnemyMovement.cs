@@ -8,7 +8,11 @@ namespace Enemy {
     {
         [SerializeField] List<PathPoint> path = new List<PathPoint>();
         [SerializeField] float speed = 1f;
+        EnemyBase enemy;
         // Start is called before the first frame update
+        void Start() {
+            enemy = GetComponent<EnemyBase>();
+        }
         void OnEnable()
         {
             FindPath();
@@ -37,7 +41,9 @@ namespace Enemy {
                     yield return new WaitForEndOfFrame();
                 }
             }
+            enemy.RewardPenalty();
             gameObject.SetActive(false);
+
         }
     }
 
