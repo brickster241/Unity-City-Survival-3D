@@ -6,15 +6,14 @@ using Tower;
 namespace Tile {
     public class PathPoint : MonoBehaviour
     {
-        [SerializeField] GameObject TowerPrefab;
+        [SerializeField] TowerBase TowerPrefab;
         [SerializeField] bool canPlaceTower = true;
-
         public bool CanPlaceTower { get { return canPlaceTower; } }
         void OnMouseDown() {
-            Debug.Log("You clicked at : " + transform.name + "...");
+            // Debug.Log("You clicked at : " + transform.name + "...");
             if (canPlaceTower) {
-                Instantiate(TowerPrefab, transform.position, Quaternion.identity);
-                canPlaceTower = false;
+                bool isTowerPlaced = TowerPrefab.AddTower(TowerPrefab, transform.position);
+                canPlaceTower = !isTowerPlaced;
             }
         }
     }
