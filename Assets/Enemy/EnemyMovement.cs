@@ -7,13 +7,15 @@ namespace Enemy {
     public class EnemyMovement : MonoBehaviour
     {
         [SerializeField] List<PathPoint> path = new List<PathPoint>();
-        [SerializeField] float speed = 1f;
+        [SerializeField] float speed = 1.5f;
         EnemyBase enemy;
+        EnemyHealth enemyHealth;
         // Start is called before the first frame update
         void Start() {
             enemy = GetComponent<EnemyBase>();
+            enemyHealth = GetComponentInChildren<EnemyHealth>();
         }
-        void OnEnable()
+        public void OnEnableOperations()
         {
             FindPath();
             StartCoroutine(TravelPathPoints());
@@ -41,9 +43,10 @@ namespace Enemy {
                     yield return new WaitForEndOfFrame();
                 }
             }
-            enemy.RewardPenalty();
-            gameObject.SetActive(false);
-
+            if (enemyHealth.isEnemyEnabled()) {
+                enemy.RewardPenalty();
+                enemyHealth.DisableEnemy();
+            }
         }
     }
 

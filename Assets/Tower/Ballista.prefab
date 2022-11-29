@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 651642211121517953}
-  range: 25
+  range: 12.5
 --- !u!114 &7244521462601133578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4873,6 +4873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61eeaa7631aaea41b34bc67bb4109c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 50
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

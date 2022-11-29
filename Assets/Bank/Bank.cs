@@ -21,6 +21,7 @@ namespace Balance {
         public void Withdraw(int amount) {
             currentBalance -= Mathf.Abs(amount);
             if (currentBalance < 0) {
+                currentBalance = startingBalance;
                 // Reload the Game
                 ReloadScene();
             }

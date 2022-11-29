@@ -1499,11 +1499,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2798241116955275460, guid: 43491c1c735dc1c46b7e9dca9f65bf5e, type: 3}
   m_PrefabInstance: {fileID: 499158100}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &544905402 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-  m_PrefabInstance: {fileID: 7347729620638443547}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549553192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2220,8 +2215,7 @@ Transform:
   m_LocalPosition: {x: 40.83631, y: 17.02224, z: 11.018912}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 544905402}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2239,7 +2233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 7347729620288194115, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
   poolSize: 5
-  spawnTimer: 2
+  spawnTimer: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,7 +5391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d518dc660bd7a94459a60d2ea5f26ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingBalance: 200
+  startingBalance: 400
 --- !u!4 &1940113657
 Transform:
   m_ObjectHideFlags: 0
@@ -6002,60 +5996,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43491c1c735dc1c46b7e9dca9f65bf5e, type: 3}
---- !u!1001 &7347729620638443547
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 903353562}
-    m_Modifications:
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -40.83631
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -17.02224
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.0189123
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194114, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347729620288194115, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6d0769f88cf5dd479db8dec90a8e638, type: 3}

@@ -7,17 +7,16 @@ namespace Enemy {
     {
         [SerializeField] GameObject EnemyPrefab;
         [SerializeField] int poolSize = 5;
-        [SerializeField] float spawnTimer = 2f;
+        [SerializeField] float spawnTimer = 3f;
         GameObject[] pool;
 
-        void Awake() {
+        void Start() {
             pool = new GameObject[poolSize];
             for (int i = 0; i < poolSize; i++) {
                 pool[i] = Instantiate(EnemyPrefab, transform);
-                pool[i].SetActive(false);
+                EnemyHealth enemyHealth = pool[i].GetComponentInChildren<EnemyHealth>();
+                enemyHealth.DisableEnemy();
             }
-        }
-        void Start() {
             StartCoroutine(SpawnEnemy());
         }
         IEnumerator SpawnEnemy() {
@@ -29,8 +28,11 @@ namespace Enemy {
 
         void EnableEnemyInPool() {
             for (int i = 0; i < poolSize; i++) {
-                if (!pool[i].activeInHierarchy) {
-                    pool[i].SetActive(true);
+                EnemyHealth enemyHealth = pool[i].GetComponentInChildren<EnemyHealth>();
+                EnemyMovement enemyMovement = pool[i].GetComponent<EnemyMovement>();
+                if (!enemyHealth.isEnemyEnabled()) {
+                    enemyHealth.EnableEnemy();
+                    enemyMovement.OnEnableOperations();
                     break;
                 }
             }

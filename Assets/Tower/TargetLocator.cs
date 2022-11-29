@@ -26,8 +26,9 @@ namespace Tower {
             float minDistance = Mathf.Infinity;
             Transform closestTarget = null;
             foreach (EnemyBase enemy in enemies) {
+                EnemyHealth enemyHealth = enemy.GetComponentInChildren<EnemyHealth>();
                 float currDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                if (minDistance > currDistance) {
+                if (minDistance > currDistance && enemyHealth.isEnemyEnabled()) {
                     closestTarget = enemy.transform;
                     minDistance = currDistance;
                 }
@@ -36,13 +37,17 @@ namespace Tower {
         }
 
         void AimWeapon() {
-            float targetDistance = Vector3.Distance(transform.position, target.position);
-            if (targetDistance > range) {
-                Attack(false);
+            if (target != null) {
+                float targetDistance = Vector3.Distance(transform.position, target.position);
+                if (targetDistance > range) {
+                    Attack(false);
+                } else {
+                    Attack(true);
+                }
+                weapon.LookAt(target);
             } else {
-                Attack(true);
-            }
-            weapon.LookAt(target);
+                Attack(false);
+            }        
         }
 
         void Attack(bool isActive) {
