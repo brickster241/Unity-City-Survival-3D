@@ -6,8 +6,8 @@ namespace Enemy {
     public class ObjectPool : MonoBehaviour
     {
         [SerializeField] GameObject EnemyPrefab;
-        [SerializeField] int poolSize = 5;
-        [SerializeField] float spawnTimer = 3f;
+        [SerializeField] int poolSize = 8;
+        [SerializeField] float spawnTimer = 1.25f;
         GameObject[] pool;
 
         void Start() {

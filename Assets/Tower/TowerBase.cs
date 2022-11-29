@@ -6,6 +6,7 @@ namespace Tower {
     public class TowerBase : MonoBehaviour
     {
         [SerializeField] int cost = 50;
+        AudioSource audioSource;
         public bool AddTower(TowerBase towerPrefab, Vector3 position) {
             Bank bank = FindObjectOfType<Bank>();
             if (bank == null) {

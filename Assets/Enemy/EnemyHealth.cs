@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Enemy {
     public class EnemyHealth : MonoBehaviour
     {
-        [SerializeField] int maxHitPoints = 3;
+        [SerializeField] public int maxHitPoints = 3;
         int hitsRemaining;
         EnemyBase enemy;
         BoxCollider boxCollider;

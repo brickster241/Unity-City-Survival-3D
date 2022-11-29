@@ -4,6 +4,7 @@ using UnityEngine;
 using Tile;
 
 namespace Enemy {
+    [RequireComponent(typeof(EnemyBase))]
     public class EnemyMovement : MonoBehaviour
     {
         [SerializeField] List<PathPoint> path = new List<PathPoint>();
@@ -14,6 +15,7 @@ namespace Enemy {
         void Start() {
             enemy = GetComponent<EnemyBase>();
             enemyHealth = GetComponentInChildren<EnemyHealth>();
+            speed = Random.Range(1.25f, 2.25f);
         }
         public void OnEnableOperations()
         {
@@ -23,9 +25,9 @@ namespace Enemy {
 
         void FindPath() {
             path.Clear();
-            GameObject[] pathPoints = GameObject.FindGameObjectsWithTag("Path");
-            foreach (GameObject pathPoint in pathPoints) {
-                path.Add(pathPoint.GetComponent<PathPoint>());
+            GameObject pathParent = GameObject.FindGameObjectWithTag("Path");
+            foreach (Transform child in pathParent.transform) {
+                path.Add(child.GetComponent<PathPoint>());
             }
             transform.position = path[0].transform.position;
         }

@@ -28,11 +28,11 @@ namespace Tile {
                 DisplayCoordinates();
                 UpdateObjectName();
             }
-            ColorCoordinates();
+            SetLabelColor();
             ToggleLabel();
         }
 
-        void ColorCoordinates()
+        void SetLabelColor()
         {
             textLabel.color = pathPoint.CanPlaceTower ? defaultColor : blockedColor;
         }
