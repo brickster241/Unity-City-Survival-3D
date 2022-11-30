@@ -40,6 +40,13 @@ namespace Grid {
             }
         }
 
+        void Update() {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                // Quit Application
+                Application.Quit();
+            }
+        }
+
         public List<Vector2Int> FindNewPath() {
             List<Vector2Int> path = new List<Vector2Int>();
             int startingIndex = Random.Range(0, startingRoadPoints.Count);
