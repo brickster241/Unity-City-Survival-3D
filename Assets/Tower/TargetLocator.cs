@@ -11,7 +11,7 @@ namespace Tower {
         [SerializeField] float range = 25f;
         Transform target;
         // Start is called before the first frame update
-        void Start() {
+        void Awake() {
             weapon = transform.Find("BallistaTopMesh");
         }
 

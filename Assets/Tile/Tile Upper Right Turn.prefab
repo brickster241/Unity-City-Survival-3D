@@ -469,6 +469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile Upper Right Turn
       objectReference: {fileID: 0}
+    - target: {fileID: 2798241116955275461, guid: 43491c1c735dc1c46b7e9dca9f65bf5e, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 3109089460337947539, guid: 43491c1c735dc1c46b7e9dca9f65bf5e, type: 3}
       propertyPath: canPlaceTower
       value: 0

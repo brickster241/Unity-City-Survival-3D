@@ -332,3 +332,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TowerPrefab: {fileID: 7244521462601133578, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
   canPlaceTower: 1
+  isStartingRoadPoint: 0
+  isEndingRoadPoint: 0

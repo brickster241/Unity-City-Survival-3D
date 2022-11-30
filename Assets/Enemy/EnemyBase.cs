@@ -10,7 +10,7 @@ namespace Enemy {
         Bank bank;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             bank = FindObjectOfType<Bank>();
         }

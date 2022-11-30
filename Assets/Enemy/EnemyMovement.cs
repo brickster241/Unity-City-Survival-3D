@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Tile;
+using Grid;
 
 namespace Enemy {
     [RequireComponent(typeof(EnemyBase))]
     public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] List<PathPoint> path = new List<PathPoint>();
+        List<Vector3> pathPositions = new List<Vector3>();
         [SerializeField] float speed = 1.5f;
         EnemyBase enemy;
         EnemyHealth enemyHealth;
+        GridManager gridManager;
         // Start is called before the first frame update
-        void Start() {
+        void Awake() {
             enemy = GetComponent<EnemyBase>();
             enemyHealth = GetComponentInChildren<EnemyHealth>();
-            speed = Random.Range(1.25f, 2.25f);
+            gridManager = GameObject.FindGameObjectWithTag("GridManager").GetComponent<GridManager>();
         }
+        
         public void OnEnableOperations()
         {
             FindPath();
@@ -24,19 +27,18 @@ namespace Enemy {
         }
 
         void FindPath() {
-            path.Clear();
-            GameObject pathParent = GameObject.FindGameObjectWithTag("Path");
-            foreach (Transform child in pathParent.transform) {
-                path.Add(child.GetComponent<PathPoint>());
+            List<Vector2Int> pathPositions2d = gridManager.FindNewPath();
+            pathPositions.Clear();
+            foreach (Vector2Int pathPosition in pathPositions2d) {
+                pathPositions.Add(new Vector3(pathPosition.x, 0, pathPosition.y));
             }
-            transform.position = path[0].transform.position;
+            transform.position = pathPositions[0];
         }
 
         IEnumerator TravelPathPoints() {
-            foreach (PathPoint pathPoint in path) {
-                Debug.Log("Travelling to " + pathPoint.name + "...");
+            foreach (Vector3 pathPosition in pathPositions) {
                 Vector3 startPosition = transform.position;
-                Vector3 endPosition = pathPoint.transform.position;
+                Vector3 endPosition = pathPosition;
                 transform.LookAt(endPosition);
                 float travelPercent = 0f;
                 while (travelPercent < 1f) {

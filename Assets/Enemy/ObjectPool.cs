@@ -7,13 +7,14 @@ namespace Enemy {
     {
         [SerializeField] GameObject EnemyPrefab;
         [SerializeField] int poolSize = 8;
-        [SerializeField] float spawnTimer = 1.25f;
+        [SerializeField] float spawnTimer = 1.5f;
         GameObject[] pool;
 
-        void Start() {
+        void Awake() {
             pool = new GameObject[poolSize];
             for (int i = 0; i < poolSize; i++) {
                 pool[i] = Instantiate(EnemyPrefab, transform);
+                Debug.Log("enemy " + "Instantiated => " + pool[i]);
                 EnemyHealth enemyHealth = pool[i].GetComponentInChildren<EnemyHealth>();
                 enemyHealth.DisableEnemy();
             }
