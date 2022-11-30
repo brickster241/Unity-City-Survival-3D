@@ -18,14 +18,12 @@ namespace Enemy {
         public void RewardBalance() {
             if (bank != null) {
                 bank.Deposit(balanceReward);
-                Debug.Log(bank.CurrentBalance);
             }
         }
 
         public void RewardPenalty() {
             if (bank != null) {
                 bank.Withdraw(balancePenalty);
-                Debug.Log(bank.CurrentBalance);
             }
         }
     }

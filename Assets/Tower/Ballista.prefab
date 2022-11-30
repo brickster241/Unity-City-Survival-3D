@@ -4823,6 +4823,7 @@ GameObject:
   - component: {fileID: 3049131714819384361}
   - component: {fileID: 9071473711181973011}
   - component: {fileID: 7244521462601133578}
+  - component: {fileID: 2978364892299798713}
   m_Layer: 0
   m_Name: Ballista
   m_TagString: Untagged
@@ -4874,6 +4875,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+--- !u!65 &2978364892299798713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219458064393657486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

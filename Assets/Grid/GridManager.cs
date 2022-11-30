@@ -41,13 +41,10 @@ namespace Grid {
         }
 
         public List<Vector2Int> FindNewPath() {
-            // Debug.Log("Starting points : " + startingRoadPoints.Count);
-            // Debug.Log("Ending points : " + endingRoadPoints.Count);
             List<Vector2Int> path = new List<Vector2Int>();
             int startingIndex = Random.Range(0, startingRoadPoints.Count);
             Vector2Int startingPoint = startingRoadPoints[startingIndex];
             path.Add(startingPoint);
-            Debug.Log("Starting Point : " + startingPoint.ToString());
             Vector2 direction = Vector2.left;
             while (!endingRoadPoints.Contains(path[path.Count - 1])) {
                 List<Vector2Int> neighbours = new List<Vector2Int>();
@@ -64,12 +61,10 @@ namespace Grid {
                 }
                 // To remove the IndexOutOfBoundsError
                 neighbours.Add(currentNode + Vector2Int.left * 10);
-                // Debug.Log("Road Neighbours of " + path[path.Count - 1].ToString() + " : " + neighbours.Count);
                 int neighbourIndex = Random.Range(0, neighbours.Count - 1);
                 Vector2Int nextInPath = neighbours[neighbourIndex];
                 direction = (nextInPath - currentNode) / 10;
                 path.Add(nextInPath);
-                // Debug.Log("Added Path : " + path[path.Count - 1].ToString());
             }
             return path;
         }

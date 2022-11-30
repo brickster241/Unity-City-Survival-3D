@@ -14,7 +14,6 @@ namespace Enemy {
             pool = new GameObject[poolSize];
             for (int i = 0; i < poolSize; i++) {
                 pool[i] = Instantiate(EnemyPrefab, transform);
-                Debug.Log("enemy " + "Instantiated => " + pool[i]);
                 EnemyHealth enemyHealth = pool[i].GetComponentInChildren<EnemyHealth>();
                 enemyHealth.DisableEnemy();
             }

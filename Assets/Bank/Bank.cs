@@ -8,16 +8,21 @@ using TMPro;
 namespace Balance {
     public class Bank : MonoBehaviour
     {
-        [SerializeField] int startingBalance = 250;
-        [SerializeField] int levelUpBalance = 500;
         int levelUpDeficit = 50;
-        [SerializeField] TextMeshProUGUI balanceLabel;
-        [SerializeField] TextMeshProUGUI levelLabel;
         int currentBalance;
         int currentLevel = 1;
+        [SerializeField] int maxTowerCount = 5;
+        [SerializeField] int startingBalance = 250;
+        [SerializeField] int levelUpBalance = 500;
+        [SerializeField] TextMeshProUGUI balanceLabel;
+        [SerializeField] TextMeshProUGUI levelLabel;
+        [SerializeField] TextMeshProUGUI hitPointsLabel;
+        public int currentTowerCount = 0;
         public int CurrentBalance { get { return currentBalance; } }
         public int CurrentLevel { get { return currentLevel; } }
+        public int MaxTowerCount { get { return maxTowerCount; } }
         AudioSource audioSource;
+        int startingHits = 2;
         void Awake() {
             currentBalance = startingBalance;
             audioSource = GetComponent<AudioSource>();
@@ -30,6 +35,8 @@ namespace Balance {
         void UpdateLabels() {
             balanceLabel.text = "BANK : " + currentBalance + " / " + levelUpBalance;
             levelLabel.text = "LEVEL : " + currentLevel;
+            int hits = startingHits + currentLevel;
+            hitPointsLabel.text = "HITS / KILL : " + hits;
         }
 
         public void Deposit(int amount) {

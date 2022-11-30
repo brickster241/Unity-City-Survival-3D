@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Tile;
 using Grid;
+using Balance;
 
 namespace Enemy {
     [RequireComponent(typeof(EnemyBase))]
     public class EnemyMovement : MonoBehaviour
     {
         List<Vector3> pathPositions = new List<Vector3>();
-        [SerializeField] float speed = 1.5f;
+        [SerializeField] float speed = 1f;
         EnemyBase enemy;
         EnemyHealth enemyHealth;
         GridManager gridManager;
+        Bank bank;
         // Start is called before the first frame update
         void Awake() {
             enemy = GetComponent<EnemyBase>();
             enemyHealth = GetComponentInChildren<EnemyHealth>();
             gridManager = GameObject.FindGameObjectWithTag("GridManager").GetComponent<GridManager>();
+            bank = FindObjectOfType<Bank>();
         }
         
         public void OnEnableOperations()
@@ -42,7 +45,7 @@ namespace Enemy {
                 transform.LookAt(endPosition);
                 float travelPercent = 0f;
                 while (travelPercent < 1f) {
-                    travelPercent += Time.deltaTime * speed;
+                    travelPercent += Time.deltaTime * (speed + 0.25f * bank.CurrentLevel);
                     transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                     yield return new WaitForEndOfFrame();
                 }
