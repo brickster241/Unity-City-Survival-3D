@@ -46,6 +46,7 @@ namespace Balance {
                 UpdateLabels();
                 currentBalance = Mathf.Max(startingBalance - levelUpDeficit * currentLevel, 0);
                 currentLevel += 1;
+                maxTowerCount += 1;
                 audioSource.Play();
             }
         }

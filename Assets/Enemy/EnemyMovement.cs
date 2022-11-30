@@ -45,7 +45,7 @@ namespace Enemy {
                 transform.LookAt(endPosition);
                 float travelPercent = 0f;
                 while (travelPercent < 1f) {
-                    travelPercent += Time.deltaTime * (speed + 0.25f * bank.CurrentLevel);
+                    travelPercent += Time.deltaTime * (speed + 0.1f * bank.CurrentLevel);
                     transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                     yield return new WaitForEndOfFrame();
                 }
